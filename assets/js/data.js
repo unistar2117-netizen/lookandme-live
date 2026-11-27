@@ -179,13 +179,13 @@ window.LAM_DATA = {
         { cat: '하의', brand: '협찬 브랜드', name: '인디고 생지 데님', material: '데님', en: 'dark indigo raw selvedge denim jeans, cuffed' },
         { cat: '신발', brand: '성수 슈메이커', name: '탄 목토 워크 부츠', material: '레더', en: 'tan leather moc-toe work boots' }
       ] },
-    { no: 19, name: '장예린', insta: 'yerin_jang', tags: ['보헤미안', '로맨틱'], face: [51.2, 8.1, 2.21],
-      person: 'Korean woman, late 20s, long wavy hair', pose: 'walking gracefully, skirt moving',
+    { no: 19, name: '장예린', insta: 'yerin_jang', tags: ['레이어드', '보헤미안'], face: [49.9, 6.3, 2.65],
+      person: 'Korean woman, mid-20s, long dark wavy hair with a center part', pose: 'walking calmly toward the camera, arms relaxed',
       items: [
-        { cat: '아우터', brand: '성수 빈티지 숍', name: '더스티 로즈 가디건', material: '니트', en: 'dusty-rose knit cardigan' },
-        { cat: '상의', brand: '기부 의류', name: '화이트 레이스 블라우스', material: '코튼', en: 'white cotton blouse with lace trim at the collar' },
-        { cat: '하의', brand: '협찬 브랜드', name: '베이지 티어드 롱스커트', material: '코튼', en: 'long beige tiered cotton skirt' },
-        { cat: '신발', brand: '성수 슈메이커', name: '브라운 발레 플랫', material: '레더', en: 'brown leather ballet flats' }
+        { cat: '상의', brand: '기부 의류', name: '크림 러플 블라우스', material: '코튼', en: 'cream long-sleeve blouse with a ruffled V-neck placket and gathered cuffs' },
+        { cat: '하의', brand: '성수 빈티지 숍', name: '그레이 데님 패치 스커트', material: '데님', en: 'gray washed-denim asymmetric flared skirt with brown leather patches and an orange stitched raw hem' },
+        { cat: '하의', brand: '협찬 브랜드', name: '차콜 셔링 와이드 팬츠', material: '코튼', en: 'dark charcoal ruched wide pants worn under the skirt' },
+        { cat: '신발', brand: '성수 슈메이커', name: '브라운 슬라우치 부츠', material: '레더', en: 'brown slouchy leather boots with buckle straps' }
       ] },
     { no: 20, name: '안태오', insta: 'taeo.an', tags: ['미니멀', '젠더리스'], face: [50.0, 5.3, 2.31],
       person: 'Korean man, mid-20s, tall and slim, two-block haircut', pose: 'long confident stride, coat open',

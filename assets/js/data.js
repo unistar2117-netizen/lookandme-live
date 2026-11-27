@@ -155,13 +155,13 @@ window.LAM_DATA = {
         { cat: '하의', brand: '협찬 브랜드', name: '에크루 린넨 와이드 팬츠', material: '린넨', en: 'ecru wide-leg linen trousers' },
         { cat: '신발', brand: '성수 슈메이커', name: '베이지 레더 뮬', material: '레더', en: 'beige leather flat mules' }
       ] },
-    { no: 16, name: '남시우', insta: 'siwoo_nam', tags: ['빈티지', '워크웨어'], face: [51.1, 9.9, 2.67],
-      person: 'Korean man, late 20s, short curly hair', pose: 'walking with a relaxed smile, jacket collar popped',
+    { no: 16, name: '남시우', insta: 'siwoo_nam', tags: ['빈티지', '워크웨어'], face: [49.9, 11.3, 2.8],
+      person: 'Korean man, mid-20s, short black hair under a charcoal knit beanie', pose: 'walking toward the camera, an orange leather bucket bag in his right hand',
       items: [
-        { cat: '아우터', brand: '성수 빈티지 숍', name: '빈티지 데님 재킷', material: '데님', en: 'faded mid-blue denim trucker jacket' },
-        { cat: '상의', brand: '기부 의류', name: '레드 체크 플란넬 셔츠', material: '코튼', en: 'red-and-black checked flannel shirt' },
-        { cat: '하의', brand: '협찬 브랜드', name: '베이지 치노 팬츠', material: '코튼', en: 'beige cotton chino trousers' },
-        { cat: '신발', brand: '성수 슈메이커', name: '브라운 스웨이드 데저트 부츠', material: '스웨이드', en: 'brown suede desert boots' }
+        { cat: '아우터', brand: '성수 빈티지 숍', name: '인디고 데님 트러커 재킷', material: '데님', en: 'dark indigo denim trucker jacket with tonal stitching' },
+        { cat: '상의', brand: '기부 의류', name: '레드 울 스웨터', material: '울', en: 'deep red crew-neck wool sweater' },
+        { cat: '하의', brand: '협찬 브랜드', name: '인디고 와이드 데님 팬츠', material: '데님', en: 'extra-wide balloon-leg indigo jeans' },
+        { cat: '가방', brand: '성수 가죽 공방', name: '오렌지 레더 버킷백', material: '레더', en: 'orange-tan leather drawstring bucket bag' }
       ] },
     { no: 17, name: '배하은', insta: 'haeun.bae', tags: ['Y2K', '스트리트'], face: [53.0, 24.8, 2.85],
       person: 'Korean woman, early 20s, long hair with small hair clips', pose: 'walking with attitude, one hand on the hip',
@@ -267,13 +267,13 @@ window.LAM_DATA = {
         { cat: '하의', brand: '협찬 브랜드', name: '블랙 레더 미니스커트', material: '레더', en: 'black leather mini skirt' },
         { cat: '신발', brand: '성수 슈메이커', name: '블랙 플랫폼 로퍼', material: '레더', en: 'black leather platform loafers worn with white knee socks' }
       ] },
-    { no: 30, name: '황지민', insta: 'jimin.hwang', tags: ['시크', '젠더리스'], face: [51.0, 10.5, 2.42],
-      person: 'Korean woman, early 30s, short pixie cut', pose: 'standing at the end of the runway, chin up, hands in coat pockets',
+    { no: 30, name: '황지민', insta: 'jimin.hwang', tags: ['컬러풀', '레이어드'], face: [49.8, 9.3, 2.46],
+      person: 'Korean woman, late 20s, platinum-blonde chin-length bob', pose: 'striding forward, the lime tulle skirt swinging out from under the wrap skirt',
       items: [
-        { cat: '아우터', brand: '성수 빈티지 숍', name: '블랙 레더 트렌치코트', material: '레더', en: 'black leather trench coat' },
-        { cat: '상의', brand: '기부 의류', name: '화이트 코튼 셔츠', material: '코튼', en: 'crisp white cotton shirt' },
-        { cat: '하의', brand: '협찬 브랜드', name: '블랙 와이드 슬랙스', material: '울', en: 'black wide-leg wool trousers' },
-        { cat: '소품', brand: '성수 금속 공방', name: '실버 커프 팔찌', material: '실버', en: 'wide handmade silver cuff bracelet' }
+        { cat: '아우터', brand: '성수 빈티지 숍', name: '플럼 크롭 재킷', material: '울', en: 'fitted collarless plum wool cropped jacket' },
+        { cat: '하의', brand: '기부 의류', name: '플럼 랩스커트', material: '울', en: 'plum wool asymmetric wrap maxi skirt with a front slit' },
+        { cat: '하의', brand: '협찬 브랜드', name: '라임 튤 스커트', material: '튤', en: 'neon-lime layered tulle maxi skirt worn under the wrap skirt' },
+        { cat: '신발', brand: '성수 슈메이커', name: '버건디 에나멜 컴뱃 부츠', material: '에나멜', en: 'burgundy patent-leather lace-up combat boots' }
       ] }
   ]
 };

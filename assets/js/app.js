@@ -231,7 +231,9 @@
             '<span class="kicker">PICK IT, MIX IT, LINK IT</span>' +
             '<span class="hero-title">REMIX YOURSELF.</span>' +
             '<span class="hero-sub">오늘의 나를 가장 잘 표현하는 한 벌.<br>성수의 과거와 현재를 조합해 새로움을 만들어보세요</span>' +
-            '<a class="btn btn-white btn-sm" href="#/stylers">스타일러 30명 만나기</a>' +
+            (SITE === 'participant'
+              ? '<a class="btn btn-white btn-sm" href="#/scan">옷 스캔하기</a>'
+              : '<a class="btn btn-white btn-sm" href="#/stylers">스타일러 30명 만나기</a>') +
           '</div>' +
         '</div>' +
         '<section class="section"><h2 class="section-title">TRACK 1. 〈LOOK AND ME〉는?</h2>' +

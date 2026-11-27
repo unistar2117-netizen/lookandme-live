@@ -82,7 +82,8 @@
   }
   function tagsOf(no) {
     var saved = S.tags[no];
-    if (Array.isArray(saved)) return saved.slice(0, 2);
+    /* 태그 목록이 바뀌어도(11/27) 폰에 남은 옛 태그는 버림 — 안 그러면 새 태그를 못 고름 */
+    if (Array.isArray(saved)) return saved.filter(function (t) { return D.moodTags.indexOf(t) >= 0; }).slice(0, 2);
     if (no === D.demoStyler) return [];
     var st = byNo(no);
     return st ? st.tags.slice(0, 2) : [];

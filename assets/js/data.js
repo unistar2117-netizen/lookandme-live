@@ -17,14 +17,14 @@ window.LAM_DATA = {
   },
 
   /* 참가자가 옷 스캔 화면에서 고르는 분위기 해시태그 */
-  moodTags: ['레이어드', '빈티지', '미니멀', '모노톤', '워크웨어', '유틸리티', '로맨틱', '포인트컬러', '스트리트', '클래식', '스포티', '내추럴'],
+  moodTags: ['미니멀', '시크', '클래식', '젠더리스', '빈티지', '로맨틱', '프레피', '레이어드', '스트리트', '스포티', 'Y2K', '컬러풀', '워크웨어', '고프코어', '내추럴', '보헤미안'],
 
   /* 투표 완료 — 이어서 즐기는 크리에이티브X성수 (프로그램 · 시간 · 장소는 예시, 2027 프로그램표가 나오면 바꿈) */
   programs: [
-    { id: 'music', series: '뮤직성수', title: '뮤직성수 스트리트 라이브', when: '10.9(토) 20:30', where: '성수 야외 스테이지', how: '모바일 예매 후 입장', tags: ['스트리트', '스포티', '포인트컬러'] },
-    { id: 'art', series: '아트페어', title: '성수 아트페어 야간 관람', when: '10.9(토) 20:00–22:00', where: '성수 아트페어 전시장', how: '현장 입장', tags: ['미니멀', '모노톤', '클래식'] },
-    { id: 'film', series: '필름성수', title: '필름성수 심야 상영', when: '10.9(토) 21:00', where: '성수 야외 상영장', how: '모바일 예매 후 입장', tags: ['빈티지', '로맨틱', '레이어드'] },
-    { id: 'market', series: '성수 공방 마켓', title: '성수 공방 마켓', when: '10.10(일) 12:00–18:00', where: '성수 공방 거리', how: '자유 입장', tags: ['워크웨어', '유틸리티', '내추럴'] }
+    { id: 'music', series: '뮤직성수', title: '뮤직성수 스트리트 라이브', when: '10.9(토) 20:30', where: '성수 야외 스테이지', how: '모바일 예매 후 입장', tags: ['스트리트', '스포티', 'Y2K', '컬러풀'] },
+    { id: 'art', series: '아트페어', title: '성수 아트페어 야간 관람', when: '10.9(토) 20:00–22:00', where: '성수 아트페어 전시장', how: '현장 입장', tags: ['미니멀', '시크', '클래식', '젠더리스'] },
+    { id: 'film', series: '필름성수', title: '필름성수 심야 상영', when: '10.9(토) 21:00', where: '성수 야외 상영장', how: '모바일 예매 후 입장', tags: ['빈티지', '로맨틱', '프레피', '레이어드'] },
+    { id: 'market', series: '성수 공방 마켓', title: '성수 공방 마켓', when: '10.10(일) 12:00–18:00', where: '성수 공방 거리', how: '자유 입장', tags: ['워크웨어', '고프코어', '내추럴', '보헤미안'] }
   ],
 
   /* 참가자 모드 시연 계정 — 처음엔 옷이 없고, QR로 스캔해서 등록 */
@@ -35,7 +35,7 @@ window.LAM_DATA = {
   fullProfiles: [1, 2, 3, 4, 5, 6, 7],
 
   stylers: [
-    { no: 1, name: '김서윤', insta: 'seoyun.kim', tags: ['레이어드', '빈티지'],
+    { no: 1, name: '김서윤', insta: 'seoyun.kim', tags: ['빈티지', '레이어드'],
       person: 'Korean woman, mid-20s, long dark wavy hair, slim', pose: 'walking toward the camera mid-stride, hands in jacket pockets, relaxed confident face',
       items: [
         { cat: '아우터', brand: '성수 빈티지 숍', name: '버건디 레더 재킷', material: '레더', en: 'cropped oversized burgundy (oxblood) leather biker jacket, slightly worn and creased, silver zippers' },
@@ -43,7 +43,7 @@ window.LAM_DATA = {
         { cat: '하의', brand: '협찬 브랜드', name: '차콜 플리츠 스커트', material: '울', en: 'charcoal-gray asymmetric pleated wool midi skirt with a sheer layered hem' },
         { cat: '신발', brand: '성수 슈메이커', name: '블랙 더비 슈즈', material: '레더', en: 'black polished leather derby shoes with chunky lug soles and cream laces' }
       ] },
-    { no: 2, name: '박지우', insta: 'jiwoo_park', tags: ['미니멀', '모노톤'],
+    { no: 2, name: '박지우', insta: 'jiwoo_park', tags: ['시크', '로맨틱'],
       person: 'Korean woman, late 20s, tall, black hair in a low sleek bun', pose: 'standing at the end of the runway, weight on one leg, looking slightly off-camera',
       items: [
         { cat: '아우터', brand: '협찬 브랜드', name: '블랙 테일러드 재킷', material: '울', en: 'sharp black single-breasted tailored blazer with 3/4 sleeves' },
@@ -51,7 +51,7 @@ window.LAM_DATA = {
         { cat: '신발', brand: '성수 슈메이커', name: '블랙 앵클 부츠', material: '레더', en: 'black leather ankle boots with a block heel' },
         { cat: '가방', brand: '성수 가죽 공방', name: '블랙 미니 숄더백', material: '레더', en: 'small black leather shoulder bag, handmade look, no logo' }
       ] },
-    { no: 3, name: '이하린', insta: 'harin.lee', tags: ['스트리트', '포인트컬러'],
+    { no: 3, name: '이하린', insta: 'harin.lee', tags: ['컬러풀', '스트리트'],
       person: 'Korean woman, early 20s, short bob with bangs, petite', pose: 'walking with a playful stride, one hand on the jacket collar, smiling',
       items: [
         { cat: '아우터', brand: '성수 빈티지 숍', name: '오렌지 나일론 바람막이', material: '나일론', en: 'vintage bright-orange nylon windbreaker, half-zip, slightly oversized, no logo' },
@@ -59,7 +59,7 @@ window.LAM_DATA = {
         { cat: '신발', brand: '협찬 브랜드', name: '화이트 캔버스 스니커즈', material: '코튼', en: 'white low-top canvas sneakers, a little scuffed, no logo' },
         { cat: '소품', brand: '성수 금속 공방', name: '실버 체인 목걸이', material: '실버', en: 'chunky handmade silver chain necklace' }
       ] },
-    { no: 4, name: '최도윤', insta: 'doyun_choi', tags: ['워크웨어', '유틸리티'],
+    { no: 4, name: '최도윤', insta: 'doyun_choi', tags: ['워크웨어', '스트리트'],
       person: 'Korean man, early 30s, short black hair, medium build, light stubble', pose: 'walking toward the camera, one hand holding the jacket front, natural half-smile',
       items: [
         { cat: '아우터', brand: '성수 빈티지 숍', name: '브라운 덕 워크 재킷', material: '코튼', en: 'faded brown cotton-duck work (chore) jacket with a corduroy collar' },
@@ -75,7 +75,7 @@ window.LAM_DATA = {
         { cat: '신발', brand: '성수 슈메이커', name: '버건디 메리제인 슈즈', material: '레더', en: 'burgundy leather Mary Jane shoes, worn with white ankle socks' },
         { cat: '가방', brand: '성수 가죽 공방', name: '탄 레더 버킷백', material: '레더', en: 'tan leather bucket bag with a drawstring' }
       ] },
-    { no: 6, name: '윤지안', insta: 'jian.yoon', tags: ['로맨틱', '포인트컬러'],
+    { no: 6, name: '윤지안', insta: 'jian.yoon', tags: ['컬러풀', '클래식'],
       person: 'Korean woman, late 20s, shoulder-length hair tucked behind the ears', pose: 'mid-stride, long coat open and moving',
       items: [
         { cat: '아우터', brand: '성수 빈티지 숍', name: '코발트 울 롱코트', material: '울', en: 'cobalt-blue wool long coat' },
@@ -91,7 +91,7 @@ window.LAM_DATA = {
         { cat: '신발', brand: '협찬 브랜드', name: '실버 러닝 스니커즈', material: '메시', en: 'retro silver-and-white running sneakers, no logo' },
         { cat: '가방', brand: '성수 가죽 공방', name: '블랙 레더 크로스백', material: '레더', en: 'small black leather crossbody bag' }
       ] },
-    { no: 8, name: '오시온', insta: 'sion_oh', tags: ['클래식', '미니멀'],
+    { no: 8, name: '오시온', insta: 'sion_oh', tags: ['프레피', '미니멀'],
       person: 'Korean man, mid-20s, medium-length wavy hair, slim', pose: 'walking with hands relaxed at the sides, calm serious face',
       items: [
         { cat: '아우터', brand: '성수 빈티지 숍', name: '그레이 헤링본 블레이저', material: '트위드', en: 'gray herringbone tweed blazer, slightly oversized' },
@@ -107,7 +107,7 @@ window.LAM_DATA = {
         { cat: '신발', brand: '성수 슈메이커', name: '탄 스웨이드 로퍼', material: '스웨이드', en: 'tan suede loafers' },
         { cat: '가방', brand: '성수 가죽 공방', name: '캔버스 레더 토트백', material: '캔버스', en: 'natural canvas tote bag with brown leather handles' }
       ] },
-    { no: 10, name: '임하준', insta: 'hajun_lim', tags: ['스트리트', '포인트컬러'],
+    { no: 10, name: '임하준', insta: 'hajun_lim', tags: ['스트리트', '프레피'],
       person: 'Korean man, late 20s, buzz cut, broad shoulders', pose: 'swaggering walk toward the camera, chin slightly up',
       items: [
         { cat: '아우터', brand: '성수 빈티지 숍', name: '그린 바시티 재킷', material: '울', en: 'vintage forest-green wool varsity jacket with cream leather sleeves, no letters or patches' },
@@ -115,7 +115,7 @@ window.LAM_DATA = {
         { cat: '하의', brand: '협찬 브랜드', name: '블랙 스트레이트 데님', material: '데님', en: 'black straight-leg denim jeans' },
         { cat: '신발', brand: '협찬 브랜드', name: '화이트 하이탑 스니커즈', material: '레더', en: 'white leather high-top sneakers, no logo' }
       ] },
-    { no: 11, name: '조아린', insta: 'arin.jo', tags: ['빈티지', '포인트컬러'],
+    { no: 11, name: '조아린', insta: 'arin.jo', tags: ['빈티지', '프레피'],
       person: 'Korean woman, early 20s, long hair with curtain bangs', pose: 'walking with one hand in the jacket pocket, looking at the camera',
       items: [
         { cat: '아우터', brand: '성수 빈티지 숍', name: '머스터드 코듀로이 재킷', material: '코듀로이', en: 'mustard-yellow corduroy jacket' },
@@ -123,7 +123,7 @@ window.LAM_DATA = {
         { cat: '하의', brand: '협찬 브랜드', name: '브라운 체크 스커트', material: '울', en: 'brown plaid wool A-line knee-length skirt' },
         { cat: '신발', brand: '성수 슈메이커', name: '브라운 니하이 부츠', material: '레더', en: 'brown leather knee-high boots' }
       ] },
-    { no: 12, name: '신도현', insta: 'dohyun.shin', tags: ['미니멀', '모노톤'],
+    { no: 12, name: '신도현', insta: 'dohyun.shin', tags: ['미니멀', '시크'],
       person: 'Korean man, about 30, neat side-parted hair, thin metal glasses', pose: 'walking evenly, hands in coat pockets',
       items: [
         { cat: '아우터', brand: '협찬 브랜드', name: '차콜 맥 코트', material: '코튼', en: 'charcoal cotton mac (trench-style) coat, single-breasted' },
@@ -139,7 +139,7 @@ window.LAM_DATA = {
         { cat: '하의', brand: '협찬 브랜드', name: '블랙 펜슬 스커트', material: '울', en: 'black wool midi pencil skirt' },
         { cat: '신발', brand: '성수 슈메이커', name: '블랙 슬링백 힐', material: '레더', en: 'black leather slingback low heels' }
       ] },
-    { no: 14, name: '백지호', insta: 'jiho.baek', tags: ['스포티', '유틸리티'],
+    { no: 14, name: '백지호', insta: 'jiho.baek', tags: ['고프코어', '스포티'],
       person: 'Korean man, mid-20s, messy dyed-brown hair, lean', pose: 'walking with a light bounce, thumb on the bag strap',
       items: [
         { cat: '아우터', brand: '기부 의류', name: '블랙 화이트 플리스 재킷', material: '플리스', en: 'black-and-white color-block fleece zip jacket, no logo' },
@@ -155,7 +155,7 @@ window.LAM_DATA = {
         { cat: '하의', brand: '협찬 브랜드', name: '에크루 린넨 와이드 팬츠', material: '린넨', en: 'ecru wide-leg linen trousers' },
         { cat: '신발', brand: '성수 슈메이커', name: '베이지 레더 뮬', material: '레더', en: 'beige leather flat mules' }
       ] },
-    { no: 16, name: '남시우', insta: 'siwoo_nam', tags: ['빈티지', '레이어드'],
+    { no: 16, name: '남시우', insta: 'siwoo_nam', tags: ['빈티지', '워크웨어'],
       person: 'Korean man, late 20s, short curly hair', pose: 'walking with a relaxed smile, jacket collar popped',
       items: [
         { cat: '아우터', brand: '성수 빈티지 숍', name: '빈티지 데님 재킷', material: '데님', en: 'faded mid-blue denim trucker jacket' },
@@ -163,7 +163,7 @@ window.LAM_DATA = {
         { cat: '하의', brand: '협찬 브랜드', name: '베이지 치노 팬츠', material: '코튼', en: 'beige cotton chino trousers' },
         { cat: '신발', brand: '성수 슈메이커', name: '브라운 스웨이드 데저트 부츠', material: '스웨이드', en: 'brown suede desert boots' }
       ] },
-    { no: 17, name: '배하은', insta: 'haeun.bae', tags: ['포인트컬러', '스트리트'],
+    { no: 17, name: '배하은', insta: 'haeun.bae', tags: ['Y2K', '스트리트'],
       person: 'Korean woman, early 20s, long hair with small hair clips', pose: 'walking with attitude, one hand on the hip',
       items: [
         { cat: '아우터', brand: '기부 의류', name: '옐로 패딩 조끼', material: '나일론', en: 'bright-yellow puffer vest' },
@@ -171,7 +171,7 @@ window.LAM_DATA = {
         { cat: '하의', brand: '협찬 브랜드', name: '블랙 카고 미니스커트', material: '코튼', en: 'black cotton cargo mini skirt worn over black tights' },
         { cat: '신발', brand: '성수 슈메이커', name: '블랙 플랫폼 부츠', material: '레더', en: 'black leather chunky platform boots' }
       ] },
-    { no: 18, name: '유건우', insta: 'gunwoo.yu', tags: ['워크웨어', '내추럴'],
+    { no: 18, name: '유건우', insta: 'gunwoo.yu', tags: ['워크웨어', '클래식'],
       person: 'Korean man, early 30s, short hair, short neat beard, sturdy build', pose: 'walking steadily, sleeves pushed up',
       items: [
         { cat: '아우터', brand: '성수 빈티지 숍', name: '네이비 프렌치 워크 재킷', material: '코튼', en: 'faded navy French work (chore) jacket' },
@@ -179,7 +179,7 @@ window.LAM_DATA = {
         { cat: '하의', brand: '협찬 브랜드', name: '인디고 생지 데님', material: '데님', en: 'dark indigo raw selvedge denim jeans, cuffed' },
         { cat: '신발', brand: '성수 슈메이커', name: '탄 목토 워크 부츠', material: '레더', en: 'tan leather moc-toe work boots' }
       ] },
-    { no: 19, name: '장예린', insta: 'yerin_jang', tags: ['로맨틱', '레이어드'],
+    { no: 19, name: '장예린', insta: 'yerin_jang', tags: ['보헤미안', '로맨틱'],
       person: 'Korean woman, late 20s, long wavy hair', pose: 'walking gracefully, skirt moving',
       items: [
         { cat: '아우터', brand: '성수 빈티지 숍', name: '더스티 로즈 가디건', material: '니트', en: 'dusty-rose knit cardigan' },
@@ -187,7 +187,7 @@ window.LAM_DATA = {
         { cat: '하의', brand: '협찬 브랜드', name: '베이지 티어드 롱스커트', material: '코튼', en: 'long beige tiered cotton skirt' },
         { cat: '신발', brand: '성수 슈메이커', name: '브라운 발레 플랫', material: '레더', en: 'brown leather ballet flats' }
       ] },
-    { no: 20, name: '안태오', insta: 'taeo.an', tags: ['모노톤', '미니멀'],
+    { no: 20, name: '안태오', insta: 'taeo.an', tags: ['미니멀', '젠더리스'],
       person: 'Korean man, mid-20s, tall and slim, two-block haircut', pose: 'long confident stride, coat open',
       items: [
         { cat: '아우터', brand: '협찬 브랜드', name: '블랙 오버사이즈 울 코트', material: '울', en: 'black oversized wool coat' },
@@ -195,7 +195,7 @@ window.LAM_DATA = {
         { cat: '하의', brand: '성수 빈티지 숍', name: '블랙 와이드 트라우저', material: '울', en: 'black wide wool trousers' },
         { cat: '소품', brand: '성수 금속 공방', name: '실버 체인 목걸이', material: '실버', en: 'handmade silver chain necklace worn over the knit' }
       ] },
-    { no: 21, name: '송나연', insta: 'nayeon.song', tags: ['클래식', '레이어드'],
+    { no: 21, name: '송나연', insta: 'nayeon.song', tags: ['프레피', '클래식'],
       person: 'Korean woman, about 30, chin-length bob', pose: 'walking with a slight smile, one hand in the trouser pocket',
       items: [
         { cat: '아우터', brand: '성수 빈티지 숍', name: '네이비 더블 블레이저', material: '울', en: 'navy double-breasted wool blazer with gold buttons' },
@@ -211,7 +211,7 @@ window.LAM_DATA = {
         { cat: '하의', brand: '협찬 브랜드', name: '배기 라이트 데님', material: '데님', en: 'baggy light-wash jeans' },
         { cat: '신발', brand: '협찬 브랜드', name: '블랙 스케이트 슈즈', material: '스웨이드', en: 'black-and-white suede skate shoes, no logo' }
       ] },
-    { no: 23, name: '홍수빈', insta: 'subin.hong', tags: ['유틸리티', '미니멀'],
+    { no: 23, name: '홍수빈', insta: 'subin.hong', tags: ['워크웨어', '미니멀'],
       person: 'Korean woman, mid-20s, low ponytail', pose: 'walking with purpose, one hand on the belt',
       items: [
         { cat: '원피스', brand: '협찬 브랜드', name: '카키 유틸리티 점프수트', material: '코튼', en: 'khaki cotton utility jumpsuit with chest pockets' },
@@ -219,7 +219,7 @@ window.LAM_DATA = {
         { cat: '신발', brand: '성수 슈메이커', name: '블랙 컴뱃 부츠', material: '레더', en: 'black leather lace-up combat boots' },
         { cat: '가방', brand: '기부 의류', name: '블랙 나일론 크로스백', material: '나일론', en: 'black nylon crossbody bag' }
       ] },
-    { no: 24, name: '차은우', insta: 'eunwoo.cha', tags: ['클래식', '빈티지'],
+    { no: 24, name: '차은우', insta: 'eunwoo.cha', tags: ['빈티지', '클래식'],
       person: 'Korean man, late 20s, short neat hair', pose: 'walking with a gentle smile, one hand adjusting the blazer button',
       items: [
         { cat: '아우터', brand: '성수 빈티지 숍', name: '브라운 코듀로이 블레이저', material: '코듀로이', en: 'brown corduroy blazer' },
@@ -227,7 +227,7 @@ window.LAM_DATA = {
         { cat: '하의', brand: '협찬 브랜드', name: '베이지 울 트라우저', material: '울', en: 'beige wool trousers' },
         { cat: '신발', brand: '성수 슈메이커', name: '버건디 레더 로퍼', material: '레더', en: 'burgundy leather loafers' }
       ] },
-    { no: 25, name: '권민지', insta: 'minji.kwon', tags: ['스포티', '포인트컬러'],
+    { no: 25, name: '권민지', insta: 'minji.kwon', tags: ['스포티', 'Y2K'],
       person: 'Korean woman, mid-20s, long straight black hair', pose: 'walking with a bright smile, ponytail swinging',
       items: [
         { cat: '아우터', brand: '기부 의류', name: '레드 트랙 재킷', material: '나일론', en: 'red nylon track jacket with white piping, no logo' },
@@ -235,7 +235,7 @@ window.LAM_DATA = {
         { cat: '신발', brand: '협찬 브랜드', name: '화이트 청키 스니커즈', material: '레더', en: 'white chunky leather sneakers, no logo' },
         { cat: '가방', brand: '성수 가죽 공방', name: '화이트 레더 숄더백', material: '레더', en: 'small white leather shoulder bag' }
       ] },
-    { no: 26, name: '노재윤', insta: 'jaeyun_noh', tags: ['유틸리티', '워크웨어'],
+    { no: 26, name: '노재윤', insta: 'jaeyun_noh', tags: ['고프코어', '시크'],
       person: 'Korean man, early 30s, short hair, black-rim glasses', pose: 'walking steadily, hands on the jacket pockets',
       items: [
         { cat: '아우터', brand: '협찬 브랜드', name: '블랙 나일론 필드 재킷', material: '나일론', en: 'black nylon field jacket with four front pockets' },
@@ -243,7 +243,7 @@ window.LAM_DATA = {
         { cat: '하의', brand: '성수 빈티지 숍', name: '블랙 카고 팬츠', material: '코튼', en: 'black cotton cargo pants' },
         { cat: '신발', brand: '성수 슈메이커', name: '블랙 하이킹 부츠', material: '레더', en: 'black leather hiking-style boots' }
       ] },
-    { no: 27, name: '심가은', insta: 'gaeun.sim', tags: ['빈티지', '포인트컬러'],
+    { no: 27, name: '심가은', insta: 'gaeun.sim', tags: ['보헤미안', '컬러풀'],
       person: 'Korean woman, late 20s, voluminous curly perm hair', pose: 'walking with a playful smile, jacket slipping off one shoulder',
       items: [
         { cat: '아우터', brand: '성수 빈티지 숍', name: '에메랄드 스웨이드 재킷', material: '스웨이드', en: 'emerald-green suede jacket' },
@@ -251,7 +251,7 @@ window.LAM_DATA = {
         { cat: '하의', brand: '협찬 브랜드', name: '브라운 코듀로이 플레어 팬츠', material: '코듀로이', en: 'brown corduroy flared pants' },
         { cat: '신발', brand: '성수 슈메이커', name: '탄 플랫폼 클로그', material: '레더', en: 'tan leather platform clogs' }
       ] },
-    { no: 28, name: '양준서', insta: 'junseo.yang', tags: ['미니멀', '내추럴'],
+    { no: 28, name: '양준서', insta: 'junseo.yang', tags: ['내추럴', '클래식'],
       person: 'Korean man, late 20s, medium-length straight hair', pose: 'walking relaxed, trench coat belt hanging loose',
       items: [
         { cat: '아우터', brand: '성수 빈티지 숍', name: '베이지 트렌치코트', material: '코튼', en: 'beige cotton trench coat' },
@@ -259,7 +259,7 @@ window.LAM_DATA = {
         { cat: '하의', brand: '협찬 브랜드', name: '에크루 와이드 팬츠', material: '코튼', en: 'ecru wide cotton trousers' },
         { cat: '신발', brand: '성수 슈메이커', name: '화이트 레더 스니커즈', material: '레더', en: 'minimal white leather sneakers, no logo' }
       ] },
-    { no: 29, name: '고은채', insta: 'eunchae.go', tags: ['레이어드', '스트리트'],
+    { no: 29, name: '고은채', insta: 'eunchae.go', tags: ['레이어드', '프레피'],
       person: 'Korean woman, early 20s, two low braids', pose: 'walking with a shy smile, sweater sleeves over the hands',
       items: [
         { cat: '상의', brand: '기부 의류', name: '그레이 오버사이즈 니트', material: '니트', en: 'oversized heather-gray knit sweater' },
@@ -267,7 +267,7 @@ window.LAM_DATA = {
         { cat: '하의', brand: '협찬 브랜드', name: '블랙 레더 미니스커트', material: '레더', en: 'black leather mini skirt' },
         { cat: '신발', brand: '성수 슈메이커', name: '블랙 플랫폼 로퍼', material: '레더', en: 'black leather platform loafers worn with white knee socks' }
       ] },
-    { no: 30, name: '황지민', insta: 'jimin.hwang', tags: ['모노톤', '클래식'],
+    { no: 30, name: '황지민', insta: 'jimin.hwang', tags: ['시크', '젠더리스'],
       person: 'Korean woman, early 30s, short pixie cut', pose: 'standing at the end of the runway, chin up, hands in coat pockets',
       items: [
         { cat: '아우터', brand: '성수 빈티지 숍', name: '블랙 레더 트렌치코트', material: '레더', en: 'black leather trench coat' },

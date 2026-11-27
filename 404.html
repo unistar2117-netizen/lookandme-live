@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>LOOK AND ME</title>
+<script>
+// 예전 주소로 들어오면 같은 화면의 새 주소로 바로 넘김 (#/vote 같은 뒷부분도 그대로)
+(function () {
+  var p = location.pathname.replace(/^\/lookandme-live/, '').replace(/(^|\/)index\.html$/, '/').replace(/\.html$/, '');
+  location.replace('https://lookandme.vercel.app' + (p || '/') + location.search + location.hash);
+})();
+</script>
+<noscript><meta http-equiv="refresh" content="0; url=https://lookandme.vercel.app/"></noscript>
+<style>
+html,body{margin:0;height:100%;background:#000;color:#fff;font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo",sans-serif}
+body{display:flex;align-items:center;justify-content:center;text-align:center;line-height:1.6}
+a{color:#fff}
+</style>
+</head>
+<body>
+<p>LOOK AND ME 주소가 바뀌었어요<br><a href="https://lookandme.vercel.app/">lookandme.vercel.app</a></p>
+</body>
+</html>

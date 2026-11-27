@@ -1,0 +1,30 @@
+/* =========================================================
+   LOOK AND ME · 실제 사이트에서만 필요한 것 (app.css 위에 얹음)
+   ========================================================= */
+[hidden] { display: none !important; }
+body.is-locked { overflow: hidden; }
+
+/* 묶음 한 줄짜리 링크 (크리에이티브X성수) — a.row의 width:100% · background:none 보정 */
+a.group.row { width: auto; background: var(--bg-2); }
+a.group.row:active { background: var(--press); }
+
+/* 링크로 감싼 옷 칸 */
+.items a, .strip a { display: block; color: var(--label); }
+.items a:active .item-img, .strip a:active .item-img { opacity: .75; }
+
+/* 프로필 얼굴 — 참가자 사진(styler_NN.jpg)을 얼굴만 잘라 보여 줌 */
+.avatar img { transform-origin: var(--fx, 50%) var(--fy, 18%); object-position: var(--fx, 50%) var(--fy, 18%); transform: scale(var(--fs, 1.8)); }
+
+/* 정보 — 더 보기 */
+.more { padding: 0 var(--margin); margin-top: var(--sp-3); }
+.group + .more { margin-top: var(--sp-3); }
+
+/* 스캔 화면 버튼 안 아이콘 자리 유지 */
+.scanner .btn[aria-pressed="true"] { background: var(--bg-2); color: var(--tint); }
+
+/* 시트 — 아래에서 올라옴 */
+.sheet-backdrop { opacity: 0; transition: opacity var(--dur-2) var(--ease); }
+.sheet { transform: translateY(100%); transition: transform var(--dur-2) var(--ease); max-width: var(--app-max); margin: 0 auto; }
+.sheet:focus { outline: none; }
+.is-open .sheet-backdrop { opacity: 1; }
+.is-open .sheet { transform: none; }

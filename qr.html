@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>룩앤미 옷 QR</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; padding: 32px 24px 48px; background: #FFFFFF; color: #000000; font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif; }
+  h1 { margin: 0 0 24px; font-size: 24px; }
+  h2 { margin: 40px 0 16px; font-size: 18px; }
+  .grid { display: grid; gap: 16px; }
+  .big { grid-template-columns: repeat(2, 1fr); }
+  .small { grid-template-columns: repeat(4, 1fr); }
+  .grid > * { min-width: 0; }
+  .card svg { max-width: 100%; height: auto; aspect-ratio: 1; }
+  .card { break-inside: avoid; page-break-inside: avoid; padding: 12px; border: 1px solid #D1D1D6; border-radius: 10px; text-align: center; }
+  .card svg { display: block; margin: 0 auto 8px; }
+  .big svg { width: 180px; }
+  .small svg { width: 112px; }
+  .label { font-size: 14px; line-height: 1.35; word-break: keep-all; }
+  .small .label { font-size: 11px; }
+  .url { margin-top: 4px; font: 12px/1.3 ui-monospace, Menlo, monospace; color: #6E6E73; word-break: break-all; }
+  .id { margin-top: 2px; font: 12px/1.3 ui-monospace, Menlo, monospace; color: #6E6E73; }
+  @media print {
+    body { padding: 0; }
+    h2 { break-after: avoid; }
+  }
+</style>
+</head>
+<body>
+<h1>룩앤미 옷 QR — 시연용</h1>
+<h2 style="margin-top:0">입장 QR</h2>
+<div class="grid big" id="entry"></div>
+<h2>시연 옷</h2>
+<div class="grid big" id="demo"></div>
+<h2>전체 옷</h2>
+<div class="grid small" id="all"></div>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/vendor/qrcode.js"></script>
+<script>
+(function () {
+  var D = window.LAM_DATA;
+  function pad(n) { return (n < 10 ? '0' : '') + n; }
+  function esc(s) { return String(s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+  function card(st, it, k) {
+    var id = 'S' + pad(st.no) + '-' + k;
+    var q = qrcode(0, 'M');
+    q.addData('LOOKANDME:' + id);
+    q.make();
+    return '<div class="card">' + q.createSvgTag({ cellSize: 4, margin: 2 }) +
+      '<div class="label">' + esc(it.brand + ' - ' + it.name) + '</div><div class="id">' + id + '</div></div>';
+  }
+  function entry(file, label) {
+    var url = new URL(file, location.href).href;
+    var q = qrcode(0, 'M');
+    q.addData(url);
+    q.make();
+    return '<div class="card">' + q.createSvgTag({ cellSize: 4, margin: 2 }) +
+      '<div class="label"><b>' + esc(label) + '</b></div><div class="url">' + esc(url) + '</div></div>';
+  }
+  document.getElementById('entry').innerHTML = entry('index.html', '관람객용 — 티켓 QR') + entry('styler.html', '참가자용 — 네임택 QR');
+  var demo = '', all = '';
+  D.stylers.forEach(function (st) {
+    st.items.forEach(function (it, i) {
+      if (st.no === D.demoStyler) demo += card(st, it, i + 1);
+      else all += card(st, it, i + 1);
+    });
+  });
+  document.getElementById('demo').innerHTML = demo;
+  document.getElementById('all').innerHTML = all;
+})();
+</script>
+</body>
+</html>

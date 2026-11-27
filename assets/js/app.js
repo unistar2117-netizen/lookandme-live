@@ -171,13 +171,39 @@
   }
 
   /* ---------- 화면 ---------- */
+  /* X 띠 단면: 가장자리 → 가운데로 옅어짐 (덱 배경 X와 같은 비율, 가운데 = 가장자리의 1/5, 가장자리 = 흰색 10%) */
+  function xStops() {
+    return '<stop offset="0" stop-color="#fff" stop-opacity=".1"/>' +
+      '<stop offset=".5" stop-color="#fff" stop-opacity=".02"/>' +
+      '<stop offset="1" stop-color="#fff" stop-opacity=".1"/>';
+  }
+
+  /* 관람객 첫 화면 — 행사 시작 전: 화면 끝까지 펼친 옅은 회색 X 위에 LOOK AND ME 로고, 아래 초대 문장과 버튼 */
   function screenStart() {
     return {
       title: '',
-      html: navbarLogo() +
-        '<figure class="cover"><img src="assets/img/hero-venue.jpg" alt="LOOK AND ME 런웨이 무대"></figure>' +
-        '<div class="page-head"><h1>스타일을<br>새롭게 잇다.</h1><p class="intro">〈LOOK AND ME〉 런웨이의<br>관객 심사위원으로 초대합니다</p></div>' +
-        '<div class="actions"><a class="btn btn-filled" href="#/home">입장하기</a></div>'
+      html:
+        '<section class="splash">' +
+          '<span class="logo splash-logo" role="img" aria-label="리믹스 성수"></span>' +
+          '<div class="splash-mark">' +
+            /* 덱 배경의 X처럼: 모서리에서 모서리로 가는 넓은 띠 두 개, 띠 가장자리만 옅은 회색이고 안쪽은 바탕에 가깝게 */
+            '<svg class="splash-x" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">' +
+              '<defs>' +
+                '<linearGradient id="xg1" gradientUnits="userSpaceOnUse" x1="-7" y1="7" x2="7" y2="-7">' + xStops() + '</linearGradient>' +
+                '<linearGradient id="xg2" gradientUnits="userSpaceOnUse" x1="43" y1="43" x2="57" y2="57">' + xStops() + '</linearGradient>' +
+              '</defs>' +
+              '<polygon fill="url(#xg1)" points="-16,-30 144,130 116,130 -44,-30"/>' +
+              '<polygon fill="url(#xg2)" points="116,-30 144,-30 -16,130 -44,130"/>' +
+            '</svg>' +
+            '<h1 class="splash-title"><span>LOOK AND ME</span></h1>' +
+          '</div>' +
+          '<div class="splash-body">' +
+            '<p class="splash-tag">스타일을 새롭게 잇다.</p>' +
+            '<p class="splash-intro">런웨이의 관객 심사위원으로<br>당신을 초대합니다</p>' +
+            '<a class="btn btn-white" href="#/home">입장하기</a>' +
+            '<p class="splash-meta">' + esc(D.event.date) + ' · ' + esc(D.event.place) + '</p>' +
+          '</div>' +
+        '</section>'
     };
   }
 

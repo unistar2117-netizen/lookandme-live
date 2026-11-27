@@ -518,13 +518,26 @@
     else if (reg) btns = '<button class="btn btn-filled" type="button" data-act="vote" data-no="' + no + '">이 룩에 투표하기</button><button class="btn btn-plain" type="button" data-act="sheet-close">닫기</button>';
     else btns = '<button class="btn btn-plain" type="button" data-act="sheet-close">닫기</button>';
     var tags = reg ? tagsOf(no).map(function (t) { return '<span>#' + esc(t) + '</span>'; }).join('') : '<span>룩 공개 전</span>';
+    showSheet(
+      '<div class="sheet-img">' + (reg ? img(lookSrc(no), st.name + '의 최종 룩', pad(no), '최종 룩 사진').replace(' loading="lazy"', '') : ph(pad(no), '최종 룩 사진')) + '</div>' +
+      '<div class="sheet-info"><p class="no">' + pad(no) + '</p><h2 id="sheet-name">' + esc(st.name) + '</h2><p class="tags">' + tags + '</p></div>' +
+      '<div class="actions">' + btns + '</div>');
+  }
+  /* 투표 취소 확인 — 취소하면 고른 두 룩이 지워지고 처음부터 다시 */
+  function openCancelSheet() {
+    closeSheet(true);
+    showSheet(
+      '<div class="sheet-info"><h2 id="sheet-name">투표를 취소할까요?</h2>' +
+        '<p class="sheet-text">고른 두 룩이 지워지고, 처음부터 다시 고를 수 있어요.</p></div>' +
+      '<div class="actions"><button class="btn btn-gray is-danger" type="button" data-act="cancel-vote-yes">투표 취소</button>' +
+        '<button class="btn btn-plain" type="button" data-act="sheet-close">닫기</button></div>');
+  }
+  /* 아래에서 올라오는 시트 — 안에 들어갈 내용만 받아서 열기 */
+  function showSheet(inner) {
     sheetRoot.innerHTML =
       '<div class="sheet-backdrop" data-act="sheet-close"></div>' +
       '<div class="sheet" role="dialog" aria-modal="true" aria-labelledby="sheet-name" tabindex="-1">' +
-        '<span class="grabber" aria-hidden="true"></span>' +
-        '<div class="sheet-img">' + (reg ? img(lookSrc(no), st.name + '의 최종 룩', pad(no), '최종 룩 사진').replace(' loading="lazy"', '') : ph(pad(no), '최종 룩 사진')) + '</div>' +
-        '<div class="sheet-info"><p class="no">' + pad(no) + '</p><h2 id="sheet-name">' + esc(st.name) + '</h2><p class="tags">' + tags + '</p></div>' +
-        '<div class="actions">' + btns + '</div>' +
+        '<span class="grabber" aria-hidden="true"></span>' + inner +
       '</div>';
     sheet.open = true;
     sheet.prevFocus = document.activeElement;
@@ -611,7 +624,7 @@
             '<div class="row kv"><span>참여 방법</span><span>' + esc(p.how) + '</span></div>' +
             '<a class="row row-link" href="' + esc(D.event.creativeUrl) + '" target="_blank" rel="noopener"><span class="row-title">프로그램 자세히 보기</span><span class="i trail" data-i="arrow-ur"></span></a>' +
           '</div></section>' +
-        '<div class="actions"><a class="btn btn-gray" href="#/vote">투표 화면으로 돌아가기</a></div>'
+        '<div class="actions"><button class="btn btn-gray" type="button" data-act="cancel-vote">투표 취소하기</button></div>'
     };
   }
 
@@ -645,6 +658,8 @@
       if (h === '/scan') scr = screenScan();
       else if (h === '/info') scr = screenInfo();
       else if (h === '/done' && !S.voted) { location.replace('#/vote'); return; }
+      /* 투표를 마쳤으면 투표 탭 = 내가 고른 룩 화면 */
+      else if (h === '/vote' && S.voted) { location.replace('#/done'); return; }
       else scr = h === '/vote' ? screenVote() : screenDone();
     }
     else { location.replace('#/'); return; }
@@ -688,6 +703,11 @@
       S.votes.push(no);
       if (S.votes.length === 2) { S.voted = true; save(); closeSheet(true); go_('#/done'); return; }
       save(); refreshVote(); closeSheet();
+    }
+    else if (act === 'cancel-vote') openCancelSheet();
+    else if (act === 'cancel-vote-yes') {
+      S.votes = []; S.voted = false; save();
+      closeSheet(true); go_('#/vote');
     }
     else if (act === 'unvote') {
       if (S.voted) return;

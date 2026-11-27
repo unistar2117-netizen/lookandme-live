@@ -32,3 +32,7 @@ a.group.row:active { background: var(--press); }
 /* 프로필이 없는 스타일러 칸 — 사진 · 이름만, 누르는 반응 없음 */
 .tile.is-static { cursor: default; }
 .tile.is-static:active .tile-img { opacity: 1; }
+
+/* 투표 취소 확인 시트 — 지우는 버튼만 빨간 글자 */
+.btn.is-danger { color: var(--danger); }
+.sheet-info .sheet-text { margin-top: 6px; font-size: var(--fs-sub); line-height: 1.45; color: var(--label-2); }

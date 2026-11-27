@@ -30,6 +30,10 @@ window.LAM_DATA = {
   /* 참가자 모드 시연 계정 — 처음엔 옷이 없고, QR로 스캔해서 등록 */
   demoStyler: 7,
 
+  /* 프로필이 열리는 사람 = 미리 받은 사진 · 런웨이 사진 · 옷 사진까지 다 있는 7명 (11/27 사용자 결정)
+     나머지는 스타일러 목록(미리 받은 사진) · 투표(런웨이 사진)에만 나오고 눌러도 프로필이 안 열림 */
+  fullProfiles: [1, 2, 3, 4, 5, 6, 7],
+
   stylers: [
     { no: 1, name: '김서윤', insta: 'seoyun.kim', tags: ['레이어드', '빈티지'],
       person: 'Korean woman, mid-20s, long dark wavy hair, slim', pose: 'walking toward the camera mid-stride, hands in jacket pockets, relaxed confident face',

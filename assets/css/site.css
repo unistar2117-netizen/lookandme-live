@@ -28,3 +28,7 @@ a.group.row:active { background: var(--press); }
 .sheet:focus { outline: none; }
 .is-open .sheet-backdrop { opacity: 1; }
 .is-open .sheet { transform: none; }
+
+/* 프로필이 없는 스타일러 칸 — 사진 · 이름만, 누르는 반응 없음 */
+.tile.is-static { cursor: default; }
+.tile.is-static:active .tile-img { opacity: 1; }

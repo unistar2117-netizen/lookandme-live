@@ -88,6 +88,9 @@
     return st ? st.tags.slice(0, 2) : [];
   }
   function isRegistered(no) { return itemsOf(no).length >= 1 && tagsOf(no).length === 2; }
+  /* 프로필 · 옷 사진이 있는 7명 (참가자 사이트에서는 내 프로필도) */
+  function isFull(no) { return (D.fullProfiles || []).indexOf(no) >= 0; }
+  function hasProfile(no) { return isFull(no) || (SITE === 'participant' && S.me === no); }
   function materialsOf(no) {
     var out = [];
     itemsOf(no).forEach(function (it) { if (it.material && out.indexOf(it.material) < 0) out.push(it.material); });
@@ -238,9 +241,15 @@
     };
   }
 
+  /* 프로필이 있는 사람만 누를 수 있는 칸, 나머지는 사진 · 이름만 */
+  function tileWrap(st, inner) {
+    return hasProfile(st.no)
+      ? '<a class="tile" href="#/styler/' + pad(st.no) + '">' + inner + '</a>'
+      : '<div class="tile is-static">' + inner + '</div>';
+  }
   function stylerTile(st) {
-    return '<a class="tile" href="#/styler/' + pad(st.no) + '"><span class="tile-img">' +
-      img(stylerSrc(st.no), st.name, pad(st.no), '참가자 사진') + '</span>' + tileName(st) + tileSub(st.no) + '</a>';
+    return tileWrap(st, '<span class="tile-img">' +
+      img(stylerSrc(st.no), st.name, pad(st.no), '참가자 사진') + '</span>' + tileName(st) + tileSub(st.no));
   }
   function screenStylers() {
     return {
@@ -438,7 +447,7 @@
   /* ---------- 정보 ---------- */
   function screenInfo() {
     var all = [];
-    D.stylers.forEach(function (st) { if (isRegistered(st.no)) all = all.concat(itemsOf(st.no)); });
+    D.stylers.forEach(function (st) { if (isFull(st.no) && isRegistered(st.no)) all = all.concat(itemsOf(st.no)); });
     var wear = all.filter(function (it) { return !isMade(it); });
     var made = all.filter(isMade);
     function more(list, id) { return list.length > 9 ? '<div class="more"><button class="btn btn-gray btn-sm" type="button" data-act="more" data-target="' + id + '" aria-controls="' + id + '">더 보기</button></div>' : ''; }
@@ -581,13 +590,16 @@
         '<div class="page-head"><h1>투표가 완료됐어요!</h1><p class="lead">' + esc(looks.map(function (st) { return st.name; }).join(', ')) + ' 님의 룩을 골랐어요. 참여해 주셔서 감사합니다.</p></div>' +
         '<section class="section" style="margin-top: 32px"><h2 class="section-title">내가 고른 룩</h2><div class="grid">' +
           looks.map(function (st) {
-            return '<a class="tile" href="#/styler/' + pad(st.no) + '"><span class="tile-img">' + img(lookSrc(st.no), st.name + '의 최종 룩', pad(st.no), '최종 룩 사진') + '</span>' + tileName(st) + tileSub(st.no) + '</a>';
+            return tileWrap(st, '<span class="tile-img">' + img(lookSrc(st.no), st.name + '의 최종 룩', pad(st.no), '최종 룩 사진') + '</span>' + tileName(st) + tileSub(st.no));
           }).join('') + '</div></section>' +
-        '<section class="section"><h2 class="section-title">룩에 사용된 아이템</h2>' +
-          looks.map(function (st) {
-            return '<p class="strip-head"><span class="no">' + pad(st.no) + '</span>' + esc(st.name) + '</p>' +
-              '<ul class="strip">' + itemsOf(st.no).map(function (it) { return itemCell(it, false); }).join('') + '</ul>';
-          }).join('') + '</section>' +
+        /* 옷 사진이 있는 룩만 (없으면 이 칸 전체를 뺌) */
+        (looks.some(function (st) { return isFull(st.no); })
+          ? '<section class="section"><h2 class="section-title">룩에 사용된 아이템</h2>' +
+            looks.filter(function (st) { return isFull(st.no); }).map(function (st) {
+              return '<p class="strip-head"><span class="no">' + pad(st.no) + '</span>' + esc(st.name) + '</p>' +
+                '<ul class="strip">' + itemsOf(st.no).map(function (it) { return itemCell(it, false); }).join('') + '</ul>';
+            }).join('') + '</section>'
+          : '') +
         '<section class="section"><h2 class="section-title">' + esc(tagLine(m.tags)) + ' 룩에 어울리는 축제 더 알아보기</h2>' +
           '<div class="group">' +
             '<div class="row"><span class="row-main"><span class="row-sub">이어서 즐기는 크리에이티브X성수</span><span class="row-title strong">' + esc(p.title) + '</span></span></div>' +
@@ -621,7 +633,7 @@
     else if (h === '/home') scr = screenHome();
     else if (h === '/stylers') scr = screenStylers();
     else if ((m = /^\/styler\/(\d{1,2})$/.exec(h))) {
-      if (!byNo(Number(m[1]))) { location.replace('#/stylers'); return; }
+      if (!byNo(Number(m[1])) || !hasProfile(Number(m[1]))) { location.replace('#/stylers'); return; }
       scr = screenProfile(Number(m[1]));
     }
     else if (h === '/code' || h === '/scan' || h === '/info' || h === '/vote' || h === '/done') {

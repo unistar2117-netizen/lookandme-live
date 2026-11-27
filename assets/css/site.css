@@ -41,8 +41,12 @@ a.group.row:active { background: var(--press); }
 .splash { position: relative; display: flex; flex-direction: column; min-height: 100svh; margin-bottom: -40px; overflow: hidden; background: #000000; color: #FFFFFF; text-align: center; }
 .splash-logo { position: absolute; top: calc(env(safe-area-inset-top) + 18px); left: 50%; translate: -50% 0; z-index: 1; background: #FFFFFF; }
 .splash-mark { position: relative; flex: 1; display: grid; place-items: center; min-height: 300px; }
-/* X = 화면 위 모서리 → 로고 아래까지 대각선, 교차점 = 로고 한가운데. 띠는 화면 밖까지 이어져 끝이 안 보임 */
+/* X = 화면 위 모서리 → 로고 아래까지 대각선, 교차점 = 로고 한가운데. 한 덩어리라 가운데 겹침 없음, 화면 밖까지 이어져 끝이 안 보임 */
 .splash-x { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.splash-x polygon { vector-effect: non-scaling-stroke; }
+.splash-x .x-fill { fill: #FFFFFF; fill-opacity: .02; }
+/* 굵기 10~80px 테두리 8겹(각 1%)을 X 안쪽만 남겨 겹치면 → 외곽선에서 안쪽으로 부드럽게 옅어짐 */
+.splash-x .x-edge { fill: none; stroke: #FFFFFF; stroke-opacity: .01; }
 /* 로고 = 보내 준 LOOK AND ME 로고를 그대로 딴 SVG, 검은 바탕이라 흰색 */
 .splash-title { position: relative; width: min(84%, 360px); aspect-ratio: 4660 / 2133; background: #FFFFFF; -webkit-mask: url("../brand/lookandme-logo.svg") center / contain no-repeat; mask: url("../brand/lookandme-logo.svg") center / contain no-repeat; }
 .splash-title span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }

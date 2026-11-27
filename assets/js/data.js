@@ -10,7 +10,7 @@
 window.LAM_DATA = {
   event: {
     name: 'LOOK AND ME',
-    date: '2027.10.9(토) 18:00–20:00',
+    date: '2027.10.9(토) 17:00–19:00',
     place: '성동구민종합체육센터 대체육관',
     hashtag: '#룩앤미성수',
     creativeUrl: 'https://www.creativexseongsu.co.kr/'

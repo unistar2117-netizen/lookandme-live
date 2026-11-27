@@ -171,11 +171,13 @@
   }
 
   /* ---------- 화면 ---------- */
-  /* X 띠 단면: 가장자리 → 가운데로 옅어짐 (덱 배경 X와 같은 비율, 가운데 = 가장자리의 1/5, 가장자리 = 흰색 10%) */
-  function xStops() {
-    return '<stop offset="0" stop-color="#fff" stop-opacity=".1"/>' +
-      '<stop offset=".5" stop-color="#fff" stop-opacity=".02"/>' +
-      '<stop offset="1" stop-color="#fff" stop-opacity=".1"/>';
+  /* 첫 화면 X = 모서리→모서리 띠 두 개(가로 폭 28%)를 합친 외곽선 한 덩어리 — 가운데 겹치는 마름모 없음, 화면 밖까지 이어짐 */
+  var X_PTS = '-44,-30 -16,-30 50,36 116,-30 144,-30 64,50 144,130 116,130 50,64 -16,130 -44,130 36,50';
+  /* 안은 흰색 2%, 외곽선에서 안쪽 40px까지 옅어지는 흰 테두리를 겹쳐 가장자리 ≈10% (덱 배경 X처럼 가장자리만 살짝 밝게) */
+  function xLayers() {
+    var h = '<polygon class="x-fill" points="' + X_PTS + '"/>';
+    for (var w = 10; w <= 80; w += 10) h += '<polygon class="x-edge" style="stroke-width:' + w + 'px" points="' + X_PTS + '"/>';
+    return h;
   }
 
   /* 관람객 첫 화면 — 행사 시작 전: 화면 끝까지 펼친 옅은 회색 X 위에 LOOK AND ME 로고, 아래 초대 문장과 버튼 */
@@ -186,14 +188,9 @@
         '<section class="splash">' +
           '<span class="logo splash-logo" role="img" aria-label="리믹스 성수"></span>' +
           '<div class="splash-mark">' +
-            /* 덱 배경의 X처럼: 모서리에서 모서리로 가는 넓은 띠 두 개, 띠 가장자리만 옅은 회색이고 안쪽은 바탕에 가깝게 */
             '<svg class="splash-x" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">' +
-              '<defs>' +
-                '<linearGradient id="xg1" gradientUnits="userSpaceOnUse" x1="-7" y1="7" x2="7" y2="-7">' + xStops() + '</linearGradient>' +
-                '<linearGradient id="xg2" gradientUnits="userSpaceOnUse" x1="43" y1="43" x2="57" y2="57">' + xStops() + '</linearGradient>' +
-              '</defs>' +
-              '<polygon fill="url(#xg1)" points="-16,-30 144,130 116,130 -44,-30"/>' +
-              '<polygon fill="url(#xg2)" points="116,-30 144,-30 -16,130 -44,130"/>' +
+              '<defs><clipPath id="xclip"><polygon points="' + X_PTS + '"/></clipPath></defs>' +
+              '<g clip-path="url(#xclip)">' + xLayers() + '</g>' +
             '</svg>' +
             '<h1 class="splash-title"><span>LOOK AND ME</span></h1>' +
           '</div>' +
@@ -253,7 +250,7 @@
       html:
         '<div class="home-top"><p class="kicker">CREATIVE X SEONGSU</p><span class="logo logo-lg" role="img" aria-label="리믹스 성수"></span></div>' +
         '<div class="hero hero-a">' +
-          '<img src="assets/img/backstage-rack.jpg" alt="">' +
+          '<img src="assets/img/hero-lookbook.jpg" alt="">' +   /* 인형 룩북: 런웨이 배경 + 인형 + 블라우스·나시·치마·바지 (11/27) */
           '<div class="hero-body">' +
             '<span class="kicker">PICK IT, MIX IT, LINK IT</span>' +
             '<span class="hero-title">REMIX YOURSELF.</span>' +
